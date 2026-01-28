@@ -1,0 +1,11 @@
+services:
+  pishrink:
+    build: .
+    image: pishrink:alpine
+    container_name: pishrink
+    privileged: true  # Required for loopback device access
+    volumes:
+      # Mount your images directory here
+      - ./images/:/images
+    # Override command with your image file, e.g.:
+    # command: ["-v", "-z", "myimage.img"]
